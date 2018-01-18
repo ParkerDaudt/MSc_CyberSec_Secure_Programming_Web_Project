@@ -1,0 +1,30 @@
+DATABASE COMMANDS:
+Connecting to database
+	$host = '127.0.0.1';
+	$user = 'websecurity'
+	$pass = 'websecurity';
+	$db = 'accounts';
+	$mysqli = new mysqli($host, $user, $pass, $db) or die($mysqli->error);
+	
+Schema in database
+	accounts
+
+Tables in schema accounts
+	users
+	contact
+	reviews
+	
+Commands to recreate tables:
+	users
+		CREATE TABLE users (id int(11) NOT NULL AUTO INCREMENT, first_name varchar(50), last_name varchar(50), email varchar(50), password varchar(255), hash varchar(32), active tinyint(1) NOT NULL default 0, PRIMARY KEY (id));
+	contact
+		CREATE TABLE contact (id int(11) NOT NULL AUTO INCREMENT, first_name varchar(50), last_name varchar(50), email varchar(50), message varchar(1000), date DATETIME, PRIMARY KEY (id));
+	reviews
+		CREATE TABLE reviews (id int(11) NOT NULL AUTO INCREMENT, first_name varchar(50), last_name varchar(50), message varchar(1000), date date NOT NULL default '0000-00-00', PRIMARY KEY (id));
+
+
+Note: No data is needed in order for the website to function. No admin account exists. 
+Note: Data can be created via the website.  The only page that displays data from a table is Reviews.php
+Note: A user must register before they login.
+
+		
